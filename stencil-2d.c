@@ -45,7 +45,8 @@ int main(int argc, char **argv) {
     }
 
     write_double_matrix_to_file(matrix_01, rows, cols, final_data_file_name);
-    deallocate_double_matrix(matrix_01, cols);
+    deallocate_double_matrix(matrix_01, rows);
+    deallocate_double_matrix(matrix_02, rows);
     printf("main: Execution complete.");
     exit(EXIT_SUCCESS);
 }
@@ -54,8 +55,8 @@ int main(int argc, char **argv) {
 void perform_9_point_stenciling(double **matrix_01, double **matrix_02, int rows, int cols) {
 
     printf("perform_9_point_stenciling: running stencil\n");
-    for (int i = 1; i < (cols - 1); i++) {
-        for (int j = 1; j < (rows - 1); j++) {
+    for (int i = 1; i < (rows - 1); i++) {
+        for (int j = 1; j < (cols - 1); j++) {
             matrix_02[i][j] = ((
                                        matrix_01[i - 1][j - 1] + matrix_01[i - 1][j] + matrix_01[i - 1][j + 1] +
                                        matrix_01[i][j + 1] + matrix_01[i + 1][j + 1] + matrix_01[i + 1][j] +

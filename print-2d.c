@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
     print_double_matrix(matrix, rows, cols);
 
     // deallocate and exit
-    deallocate_double_matrix(matrix, cols);
+    deallocate_double_matrix(matrix, rows);
     exit(EXIT_SUCCESS);
 }
 

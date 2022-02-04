@@ -23,12 +23,13 @@ int main(int argc, char **argv) {
     // begin setup
     double **matrix = allocate_double_matrix(rows, cols);
     populate_double_matrix(matrix, rows, cols);
+    print_double_matrix(matrix, rows, cols);
 
     // write to file
     write_double_matrix_to_file(matrix, rows, cols, file_name);
 
     // deallocate and exit
-    deallocate_double_matrix(matrix, cols);
+    deallocate_double_matrix(matrix, rows);
     exit(EXIT_SUCCESS);
 }
 

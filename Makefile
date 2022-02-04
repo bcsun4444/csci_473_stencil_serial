@@ -7,7 +7,7 @@ all: make-2d print-2d stencil-2d
 make-2d: make-2d.o utilities.o
 	$(CC) $(LFLAGS) -o make-2d ./make-2d.o ./utilities.o
 print-2d: print-2d.o utilities.o
-	$(CC) $(LFLAGS) -o printf-2d ./print-2d.o ./utilities.o
+	$(CC) $(LFLAGS) -o print-2d ./print-2d.o ./utilities.o
 stencil-2d: stencil-2d.o utilities.o
 	$(CC) $(LFLAGS) -o stencil-2d ./stencil-2d.o ./utilities.o
 
